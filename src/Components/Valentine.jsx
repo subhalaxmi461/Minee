@@ -30,7 +30,7 @@ const LoveQuiz = lazy(() => import('./LoveQuiz'))
 const AnniversaryCountdown = lazy(() => import('./AnniversaryCountdown'))
 const Countdown = lazy(() => import('./Countdown'))
 
-const TypewriterLetter = lazy(() => import('./TypewriterLetter'))
+const TypeWriterLetter = lazy(() => import('./TypewriterLetter'))
 const AILoveLetter = lazy(() => import('./AILoveLetter'))
 const WishList = lazy(() => import('./WishList'))
 const PhotoUpload = lazy(() => import('./PhotoUpload'))
@@ -146,7 +146,7 @@ export default function Valentine() {
           
 
           <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={1.8}><TypewriterLetter /></ScrollReveal>
+            <ScrollReveal delay={1.8}><TypeWriterLetter /></ScrollReveal>
           </Suspense>
 
           <Suspense fallback={<Loader />}>
