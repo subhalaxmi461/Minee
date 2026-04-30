@@ -1,42 +1,37 @@
-import React, { useState, lazy, Suspense } from 'react'
+import React, { useState } from 'react'
 import LoadingScreen from './LoadingScreen'
 import PasswordLock from './PasswordLock'
 import Hero from './Hero'
 import Strip from './Strip'
-// Lazy load all heavy components
-const Cursor = lazy(() => import('./Cursor'))
-const ShootingStars = lazy(() => import('./ShootingStars'))
-const FloatingHearts = lazy(() => import('./FloatingHearts'))
-const MusicPlayer = lazy(() => import('./MusicPlayer'))
-const MidnightPopup = lazy(() => import('./MidnightPopup'))
-const ThemeChanger = lazy(() => import('./ThemeChanger'))
-
-const Confetti = lazy(() => import('./Confetti'))
-const Fireworks = lazy(() => import('./Fireworks'))
-const EnvelopeLetter = lazy(() => import('./EnvelopeLetter'))
-const ProposalAnimation = lazy(() => import('./ProposalAnimation'))
-
-const LoveMeter = lazy(() => import('./LoveMeter'))
-const StarRating = lazy(() => import('./StarRating'))
-const Secret = lazy(() => import('./Secret'))
-const GiftBox = lazy(() => import('./GiftBox'))
-const SurpriseButton = lazy(() => import('./SurpriseButton'))
-const FuturePredictions = lazy(() => import('./FuturePredictions'))
-const OurTimeline = lazy(() => import('./OurTimeline'))
-const FlowerBloom = lazy(() => import('./FlowerBloom'))
-const DrawingCanvas = lazy(() => import('./DrawingCanvas'))
-
-const LoveQuiz = lazy(() => import('./LoveQuiz'))
-const AnniversaryCountdown = lazy(() => import('./AnniversaryCountdown'))
-const Countdown = lazy(() => import('./Countdown'))
-
-const TypeWriterLetter = lazy(() => import('./TypewriterLetter'))
-const AILoveLetter = lazy(() => import('./AILoveLetter'))
-const WishList = lazy(() => import('./WishList'))
-const PhotoUpload = lazy(() => import('./PhotoUpload'))
-const Slideshow = lazy(() => import('./Slideshow'))
-const ShareButton = lazy(() => import('./ShareButton'))
-const ScrollReveal = lazy(() => import('./ScrollReveal'))
+import Cursor from './Cursor'
+import ShootingStars from './ShootingStars'
+import FloatingHearts from './FloatingHearts'
+import MusicPlayer from './MusicPlayer'
+import MidnightPopup from './MidnightPopup'
+import ThemeChanger from './ThemeChanger'
+import Confetti from './Confetti'
+import Fireworks from './Fireworks'
+import EnvelopeLetter from './EnvelopeLetter'
+import ProposalAnimation from './ProposalAnimation'
+import LoveMeter from './LoveMeter'
+import StarRating from './StarRating'
+import Secret from './Secret'
+import GiftBox from './GiftBox'
+import SurpriseButton from './SurpriseButton'
+import FuturePredictions from './FuturePredictions'
+import OurTimeline from './OurTimeline'
+import FlowerBloom from './FlowerBloom'
+import DrawingCanvas from './DrawingCanvas'
+import LoveQuiz from './LoveQuiz'
+import AnniversaryCountdown from './AnniversaryCountdown'
+import Countdown from './Countdown'
+import TypeWriterLetter from './TypeWriterLetter'
+import AILoveLetter from './AILoveLetter'
+import WishList from './WishList'
+import PhotoUpload from './PhotoUpload'
+import Slideshow from './Slideshow'
+import ShareButton from './ShareButton'
+import ScrollReveal from './ScrollReveal'
 
 // Simple loader
 const Loader = () => (
@@ -66,110 +61,44 @@ export default function Valentine() {
   if (!unlocked) return <PasswordLock onUnlock={() => setUnlocked(true)} />
 
   return (
-    <Suspense fallback={<Loader />}>
+    <>
       <Cursor />
       <ShootingStars />
       <FloatingHearts />
       <MusicPlayer />
       <MidnightPopup />
       <ThemeChanger />
-      
+
       <Confetti active={showEffects} />
       <Fireworks active={showEffects} />
 
       <Hero answered={answered} setAnswered={handleAnswer} />
 
       {answered === 'yes' && (
-        <Suspense fallback={<Loader />}>
+        <>
           <ScrollReveal delay={0}><Strip /></ScrollReveal>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={0.1}><EnvelopeLetter /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={0.2}><ProposalAnimation /></ScrollReveal>
-          </Suspense>
-
-         
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={0.4}><LoveMeter /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={0.5}><StarRating /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={0.6}><Secret /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={0.7}><GiftBox /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={0.8}><SurpriseButton /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={0.9}><FuturePredictions /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={1.0}><OurTimeline /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={1.1}><FlowerBloom /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={1.2}><DrawingCanvas /></ScrollReveal>
-          </Suspense>
-
-         
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={1.4}><LoveQuiz /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={1.5}><AnniversaryCountdown /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={1.6}><Countdown /></ScrollReveal>
-          </Suspense>
-
-          
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={1.8}><TypeWriterLetter /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={1.9}><AILoveLetter /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={2.0}><WishList /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={2.1}><PhotoUpload /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={2.2}><Slideshow /></ScrollReveal>
-          </Suspense>
-
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={2.3}><ShareButton /></ScrollReveal>
-          </Suspense>
-        </Suspense>
+          <ScrollReveal delay={0.1}><EnvelopeLetter /></ScrollReveal>
+          <ScrollReveal delay={0.2}><ProposalAnimation /></ScrollReveal>
+          <ScrollReveal delay={0.4}><LoveMeter /></ScrollReveal>
+          <ScrollReveal delay={0.5}><StarRating /></ScrollReveal>
+          <ScrollReveal delay={0.6}><Secret /></ScrollReveal>
+          <ScrollReveal delay={0.7}><GiftBox /></ScrollReveal>
+          <ScrollReveal delay={0.8}><SurpriseButton /></ScrollReveal>
+          <ScrollReveal delay={0.9}><FuturePredictions /></ScrollReveal>
+          <ScrollReveal delay={1.0}><OurTimeline /></ScrollReveal>
+          <ScrollReveal delay={1.1}><FlowerBloom /></ScrollReveal>
+          <ScrollReveal delay={1.2}><DrawingCanvas /></ScrollReveal>
+          <ScrollReveal delay={1.4}><LoveQuiz /></ScrollReveal>
+          <ScrollReveal delay={1.5}><AnniversaryCountdown /></ScrollReveal>
+          <ScrollReveal delay={1.6}><Countdown /></ScrollReveal>
+          <ScrollReveal delay={1.8}><TypeWriterLetter /></ScrollReveal>
+          <ScrollReveal delay={1.9}><AILoveLetter /></ScrollReveal>
+          <ScrollReveal delay={2.0}><WishList /></ScrollReveal>
+          <ScrollReveal delay={2.1}><PhotoUpload /></ScrollReveal>
+          <ScrollReveal delay={2.2}><Slideshow /></ScrollReveal>
+          <ScrollReveal delay={2.3}><ShareButton /></ScrollReveal>
+        </>
       )}
-    </Suspense>
+    </>
   )
 }
