@@ -1,5 +1,5 @@
 export default function QRCode() {
-  const siteUrl = 'https://YOUR-SITE.netlify.app' // ← apna link yahan
+  const siteUrl = '' // ← apna link yahan
 
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(siteUrl)}&color=ff6b8a&bgcolor=1a2f6e`
 

@@ -29,7 +29,7 @@ const DrawingCanvas = lazy(() => import('./DrawingCanvas'))
 const LoveQuiz = lazy(() => import('./LoveQuiz'))
 const AnniversaryCountdown = lazy(() => import('./AnniversaryCountdown'))
 const Countdown = lazy(() => import('./Countdown'))
-const SongLyrics = lazy(() => import('./SongLyrics'))
+
 const TypewriterLetter = lazy(() => import('./TypewriterLetter'))
 const AILoveLetter = lazy(() => import('./AILoveLetter'))
 const WishList = lazy(() => import('./WishList'))
@@ -143,9 +143,7 @@ export default function Valentine() {
             <ScrollReveal delay={1.6}><Countdown /></ScrollReveal>
           </Suspense>
 
-          <Suspense fallback={<Loader />}>
-            <ScrollReveal delay={1.7}><SongLyrics /></ScrollReveal>
-          </Suspense>
+          
 
           <Suspense fallback={<Loader />}>
             <ScrollReveal delay={1.8}><TypewriterLetter /></ScrollReveal>
