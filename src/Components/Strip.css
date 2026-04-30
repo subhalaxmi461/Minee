@@ -1,0 +1,30 @@
+.strip {
+  overflow: hidden;
+  background: #e8315a;
+  padding: 0.9rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.strip-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.strip-item {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: white;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
